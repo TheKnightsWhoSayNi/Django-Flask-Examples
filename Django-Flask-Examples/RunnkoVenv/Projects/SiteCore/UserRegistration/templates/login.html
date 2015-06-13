@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="{{STATIC_URL}}css/bootstrap.css" rel="stylesheet"></link>
+    <link rel="stylesheet" href="{{STATIC_URL}}css/login.css"></link>
+</head>
+<body>
+    <div class="container">
+
+        <form class="form-signin" method="post" action="/accounts/login/">
+            <h2 class="form-signin-heading">Login</h2>
+            {% csrf_token %}
+        <input type="text" name="username" id="inputUsername" class="form-control" placeholder="Username" required>
+        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+
+        <a href="/accounts/password/reset/">Forgot password?</a>
+        </form>
+        </div>
+</body>
+</html>
+{% endblock %}

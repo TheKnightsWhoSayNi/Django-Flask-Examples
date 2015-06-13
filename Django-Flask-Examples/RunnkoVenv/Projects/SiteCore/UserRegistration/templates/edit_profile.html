@@ -1,0 +1,16 @@
+{% extends "sidebar.html" %}
+{% load crispy_forms_tags %}
+{% block sidebar_content %}
+    <h1 class="page-header">Profile</h2>
+
+    {% for field in form %}
+        {{field.error}}
+    {% endfor %}
+
+    <form id="profile_form" action='/accounts/profile/edit/' method="post">
+    {% csrf_token %}
+    {{form|crispy}}
+    <button id="profile_button" class="btn btn-lg btn-primary btn-block" type="submit">Update</button>
+    </form>
+
+{% endblock %}

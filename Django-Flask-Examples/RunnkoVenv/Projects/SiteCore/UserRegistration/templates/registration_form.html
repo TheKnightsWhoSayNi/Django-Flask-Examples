@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div id="content" class="container">
+        <meta charset="UTF-8">
+    <title>Account Registration</title>
+</head>
+<body>
+    <h1>Registration</h1>
+            {% if registered %}
+            <strong>thank you for registering!</strong>
+            <form action="/"></form>
+            {% else %}
+
+            <form id="user_form" method="post" action="/accounts/register/"
+                    enctype="multipart/form-data">
+
+                {% csrf_token %}
+
+                {{ user_form|crispy }}
+                {{ profile_form|crispy }}
+
+            <button id="registry_button" class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+            </form>
+            {% endif %}
+</div>
+{% endblock %}

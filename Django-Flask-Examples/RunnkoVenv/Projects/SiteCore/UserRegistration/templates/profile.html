@@ -1,0 +1,18 @@
+{% extends "sidebar.html" %}
+{% block sidebar_content %}
+<div>
+        <div class="row">
+        <h1 class="page-header">Profile</h1>
+            <div class="col-sm-6">
+                <!--left col-->
+                <ul class="list-group">
+                    <li class="list-group-item text-right"><span class="pull-left"><strong class="">Username</strong></span> {{user.username}}</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong class="">First name</strong></span> {{user.profile.first_name}}</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong class="">Last name</strong></span> {{user.profile.last_name}}</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong class="">Profile type</strong></span>{{user.profile.get_profileType_display}} </li>
+                </ul>
+                <form action='/accounts/profile/edit'><button id="button" class="btn btn-lg btn-primary btn-block" type="submit">Edit</button>
+            </div>
+        </div>
+</div>
+{% endblock %}

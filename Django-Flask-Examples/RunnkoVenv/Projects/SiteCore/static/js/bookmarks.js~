@@ -1,0 +1,8 @@
+$(".add-remove-bookmark").click(function(e) {
+    if ($('search-results').html() == "Add Bookmark") {
+        $('search-results').html('Remove Bookmark');
+    }
+    else {
+        $('search-results').html('Add Bookmark');
+    }
+});

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+{% if user.profile.profileType == "RC" %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2">
+            <nav class="nav-sidebar">
+                <ul class="nav">
+                    <li class="active"><a href="/accounts/profile/">Profile</a></li>
+                    <li class="nav-divider"></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-sm-offset-3">
+            {% else %}
+            <div class="container">
+    <div class="row">
+        <div class="col-sm-2">
+            <nav class="nav-sidebar">
+                <ul class="nav">
+                    <li class="active"><a href="/accounts/profile/">Profile</a></li>
+                    <li class="nav-divider"></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-sm-offset-3">
+            {% endif %}
+            {% block sidebar_content %}
+            {% endblock sidebar_content %}
+        </div>
+    </div>
+</div>
+{% endblock %}
